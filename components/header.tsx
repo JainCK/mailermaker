@@ -24,7 +24,7 @@ const Header = () => {
           <Link href="/" className="flex items-center space-x-2">
             <Mail className="h-8 w-8 text-blue-600" />
             <span className="text-2xl font-bold text-gray-900">
-              NewsletterGen
+              MailerMaker
             </span>
           </Link>
           <Badge variant="secondary" className="px-3 py-1">
