@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✉️ Newsletter HTML Generator
 
-## Getting Started
+A lightweight, elegant, and mobile-friendly 3-page web application for generating email-ready HTML content from **Markdown** and **Rich Text** inputs — no authentication, no backend storage, just pure client-side functionality.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🔗 Live Preview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[View App](#https://mailermaker.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 Project Overview
 
-## Learn More
+**Newsletter HTML Generator** helps users create clean, professional HTML email content effortlessly. The app offers dual editor modes (Markdown & Rich Text), a real-time preview (optional), and export capabilities for raw HTML. Designed with accessibility, responsiveness, and speed in mind.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🖼 Pages Breakdown
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. `/` Landing Page
 
-## Deploy on Vercel
+- **Purpose**: Introduces the tool and its benefits.
+- **Features**:
+  - Headline: “Effortless Newsletter Content Creation”
+  - Subheading: “Convert Markdown and Rich Text into Clean HTML for your Email Campaigns”
+  - Call-to-Action: “Start Creating Your Newsletter” → Navigates to `/create`
+  - Responsive layout with TailwindCSS
+  - Visual preview (animation or screenshot)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. `/create` Content Creation Page
+
+- **Purpose**: Primary interface to build newsletter content.
+- **Features**:
+
+  - Newsletter **Title** input
+  - **Toggle Editor Mode**: Switch between Markdown & Rich Text
+  - **Editor Area**:
+    - Markdown mode: Plain text input parsed with `marked`/`remark`
+    - Rich Text mode: Integrated editor (`react-quill`, `tiptap`, or `tinymce`)
+  - **Real-Time Preview** (Optional)
+  - **Dynamic Sections** (Optional): Add multiple editable blocks
+  - **Generate HTML**: Navigate to `/preview`
+
+- **State Management**:
+  - Uses Redux Toolkit to store newsletter data: title, content, mode, styling preferences
+
+---
+
+### 3. `/preview` HTML Output & Export Page
+
+- **Purpose**: Review and export the final HTML
+- **Features**:
+
+  - **Rendered Preview**: Simulates email layout
+  - **Raw HTML Code View**
+  - **Actions**:
+    - "Copy HTML" to clipboard
+    - "Download .html" file
+    - "Edit Content" → navigates back to `/create`
+  - **Styling Controls** (Optional):
+    - Basic color and font selectors for inline styling
+
+- **Security Note**: For personal use only; content is user-generated so XSS concerns are minimal
+
+---
+
+## ⚙️ Tech Stack
+
+| Purpose                                                       | Tech Used                      |
+| ------------------------------------------------------------- | ------------------------------ |
+| Framework                                                     | Next.js (TypeScript)           |
+| State Management                                              | Redux Toolkit                  |
+| Styling                                                       | Tailwind CSS, Shadcn UI        |
+| Markdown Parsing                                              | marked / remark                |
+| Rich Text Editing                                             | react-quill / tiptap / tinymce |
+| UI & Animation                                                | Shadcn, Tailwind               |
+| Clipboard / File Download                                     | ``, Blob                       |
+| ------------------------------------------------------------- |
+
+## 💡 Features at a Glance
+
+- ✅ Toggle between Markdown and Rich Text
+- ✅ Clean HTML output
+- ✅ Redux-based content persistence
+- ✅ Copy and download newsletter HTML
+- ✅ Mobile-first responsive layout
+- ✅ Modern and accessible UI (Shadcn + Tailwind)
+
+---
+
+## 📈 Potential Enhancements
+
+- [ ] Add block-based content creation
+- [ ] Add email-safe inline style options
+- [ ] Import/export JSON templates
+- [ ] Authentication and newsletter history saving
+- [ ] Theming with saved presets
+
+---
+
+## 🛠 Development Notes
+
+- Purely frontend, stateless app
+- Ideal for marketers, indie creators, or small businesses
+- Built with performance, accessibility, and maintainability in mind
+
+---
+
+## 🧑‍💻 Author
+
+Built by [JainCK](https://github.com/JainCK) — feel free to contribute or fork!

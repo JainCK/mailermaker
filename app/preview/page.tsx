@@ -28,8 +28,6 @@ import {
   Type,
   CheckCircle,
   Mail,
-  Smartphone,
-  Monitor,
   Sparkles,
   Star,
 } from "lucide-react";
@@ -39,9 +37,6 @@ export default function PreviewPage() {
   const router = useRouter();
   const newsletter = useSelector((state: RootState) => state.newsletter);
   const [copied, setCopied] = useState(false);
-  const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">(
-    "desktop"
-  );
 
   const colorOptions = [
     { value: "#3b82f6", label: "Blue" },
